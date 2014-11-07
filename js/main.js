@@ -1,10 +1,11 @@
 $(function(){
 	var $numButton = $("input.number");
-	var $opButton = $("operator");
+	var $opButton = $("input.operator");
 	var inputOp = $opButton.val();
 	var $rightBut = $("input.rightbut");
 	var inputRight = $rightBut.val();
-	var $display = $("displaybar");
+	var $display = $("input.displayoutput");
+	var prior = 0;
 	$numButton.on('click', function(){
 		$('#displayoutput').val($(this).val());
 		//append the numbers
@@ -13,16 +14,21 @@ $(function(){
 		if($(this).val() === 'clear'){
 			//clear the display bar
 		} else {
+			prior += +$('#displayoutput').val();
+		  $('#displayoutput').val(prior);
+		  prior = 0;
 			//run the equals operator
 		}
 	});
+	$opButton.on('click', function(){
+		$('#displayoutput').val($(this).val());
+		//run the function 'press'
+		
 	
 });
 function displayOutput(){
 	return $('#displayoutput').val();
 }
-
-var prior = 0;
 
 function press(buttonValue){
 	switch (buttonValue){
@@ -59,3 +65,5 @@ function press(buttonValue){
 	$('#displayoutput').val(current += buttonValue);
 	}
 };
+	});
+
