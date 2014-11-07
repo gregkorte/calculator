@@ -72,7 +72,7 @@
 	outline: none;
 }
 
-.displaybar {
+#displayoutput {
 	text-align: right;
 	font-size: 24pt;
 	width: 98%;
