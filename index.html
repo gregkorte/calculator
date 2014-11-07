@@ -2,43 +2,56 @@
 <html>
 	<head>
 		<title>Calculator</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
 	</head>
 	<body>
 	  <div class="container">
 	  	<div class="display">
-	  		<input type="text">
+	  		<input class="displaybar" type="text">
 	  	</div>
 	  	<div class="buttons">
 	  		<div class="top">
-	  			<input type="button" value="+">
-	  			<input type="button" value="-">
-	  			<input type="button" value="*">
-	  			<input type="button" value="/">
+	  			<ul>
+	  			<li><input class="operator" type="button" value="+"></li>
+	  			<li><input class="operator" type="button" value="-"></li>
+	  			<li><input class="operator" type="button" value="*"></li>
+	  			<li><input class="operator" type="button" value="/"></li>
+	  			</ul>
 	  		</div>
 	  		<div class="right">
-	  			<input type="button" value="clear">
-	  			<input type="button" value="=">
+	  			<ul>
+	  			<li><input class="rightbut" type="button" value="clear"></li>
+	  			<li><input class="rightbut" id="equal" type="button" value="="></li>
+	  			</ul>
 	  		</div>
 	  		<div class="keypad">
+	  			<ul>
 	  			<span>
-	  				<input type="button" value="7">
-	  				<input type="button" value="8">
-	  				<input type="button" value="9">
+	  				<li><input class="number" type="button" value="1"></li>
+	  				<li><input class="number" type="button" value="2"></li>
+	  				<li><input class="number" type="button" value="3"></li>
 	  			</span>
+	  			</ul>
+	  			<ul>
 	  			<span>
-	  				<input type="button" value="4">
-	  				<input type="button" value="5">
-	  				<input type="button" value="6">
+	  				<li><input class="number" type="button" value="4"></li>
+	  				<li><input class="number" type="button" value="5"></li>
+	  				<li><input class="number" type="button" value="6"></li>
 	  			</span>
+	  			</ul>
+	  			<ul>
 	  			<span>
-	  				<input type="button" value="1">
-	  				<input type="button" value="2">
-	  				<input type="button" value="3">
+	  				<li><input class="number" type="button" value="7"></li>
+	  				<li><input class="number" type="button" value="8"></li>
+	  				<li><input class="number" type="button" value="9"></li>
 	  			</span>
+	  			</ul>
+	  			<ul>
 	  			<span>
-	  				<input type="button" value="0">
-	  				<input type="button" value=".">
+	  				<li><input class="number" type="button" value="0"></li>
+	  				<li><input class="number" type="button" value="."></li>
 	  			</span>
+	  			</ul>
 	  		</div>
 	  	</div>
 	  </div>

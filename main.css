@@ -1,0 +1,81 @@
+.container {
+	border-style: solid;
+	border-color: black;
+	width: 20%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+}
+
+.keypad {
+	margin: 20px;
+}
+
+.keypad ul li {
+	display: inline;
+}
+
+.number {
+	font-size: 18pt;
+	color: #FFFFFF;
+	background-color: #474A59;
+	outline: none;
+}
+
+.number:active {
+	border-style: inset;
+	outline: none;
+}
+
+.right {
+	float: right;
+	margin-top: 15%;
+	margin-right: 5%;
+}
+
+.right ul li {
+	display: block;
+}
+
+.rightbut {
+	font-size: 16pt;
+	color: #FFFFFF;
+	background-color: #474A59;
+	outline: none;
+	margin-bottom: 30px; 
+}
+
+.rightbut:active {
+	border-style: inset;
+	outline: none;
+}
+
+#equal {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.top ul li {
+	display: inline;
+}
+
+.operator {
+	font-size: 14pt;
+	color: #FFFFFF;
+	background-color: #474A59;
+	outline: none;
+	
+}
+
+.operator:active {
+	border-style: inset;
+	outline: none;
+}
+
+.displaybar {
+	text-align: right;
+	font-size: 24pt;
+	width: 98%;
+	font-family: ‘Lucida Console’, Monaco, monospace;
+	outline: none;
+}
