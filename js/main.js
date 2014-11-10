@@ -29,40 +29,89 @@ function displayOutput(){
 	return $('#displayoutput').val();
 }
 
-function press(buttonValue){
-	switch (buttonValue){
-		case "+":
-		  prior += +$('#displayoutput').val();
-		  $('#displayoutput').val('');
-		  //handle +
-		  break;
-		case "-":
-		//handle -
-		break;
-		case "*":
-		//handle *
-		break;
-		case "/":
-		//handle /
-		break;
-		case "=":
-		  prior += +$('#displayoutput').val();
-		  $('#displayoutput').val(prior);
-		  prior = 0;
-		//handle =
-		break;
-		case "C":
-		//handle C
-		break;
-		case "+/-":
-		//handle +/-
-		break;
-	
-	default:
-	//handle numbers
-	current = $('#displayoutput').val();
-	$('#displayoutput').val(current += buttonValue);
+var previousResult;
+var nextOperation;
+
+function add(a, b){
+	if(!a){
+		a = 1;
 	}
-};
-	});
+	return ((a * 100000000000000) + (b * 100000000000000))/100000000000000
+}
+
+function subtract(a, b){
+	return a - b;
+}
+
+function multiply(a, b){
+	return a * b;
+}
+
+function divide(a, b){
+	if(b === 0){
+		return 'undefined';
+	} else {
+			return a / b;
+	}
+}
+
+function currentValue(string){
+	return $('#displayoutput').val() * 1;
+}
+
+function calculate(){
+	if(!!nextOperation){
+	previousResult = nextOperation(previousResult, currentValue());
+	} else {
+		previousResult = currentValue();
+	}
+}
+
+function press(buttonValue){
+	switch (buttonValue) {
+
+		case '+':
+			calculate();
+			nextOperation = add;
+			$('#displayoutput').val('');
+		break;
+
+		case '-':
+		calculate();
+			nextOperation = subtract;
+			$('#displayoutput').val('');
+		break;
+
+		case '*':
+			calculate();
+			nextOperation = multiply;
+			$('#displayoutput').val('');
+		break;
+
+		case '/':
+		calculate();
+			nextOperation = divide;
+			$('#displayoutput').val('');
+		break;
+
+		case 'C':
+			return $('#displayoutput').val(0);
+		break;
+
+		case '=':
+			calculate();
+			$('#displayoutput').val(previousResult);
+			previousResult = 0;
+		break;
+
+		case '+/-':
+			// previousResult += +$('#displayoutput').val();
+			// $('#displayoutput').val('');
+		break;
+
+		default:
+			var current = $('#displayoutput').val();
+			$('#displayoutput').val(current + buttonValue);
+	}
+}
 
