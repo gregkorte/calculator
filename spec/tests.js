@@ -19,7 +19,7 @@
   	});
   	describe('press', function(){
   		it('should display the number pressed', function(){
-  			assert(displayOutput(), "");
+  			assert.equal(displayOutput(), "");
   			press("1");
   			assert.equal(displayOutput(), "1");
   		});
@@ -31,15 +31,15 @@
         press('.');
         press('8');
         press('9');
-        it('should be 7.89', function () {
-          assert.equal(displayOutput(), "10.89");
-        });
+          assert.equal(displayOutput(), "7.89");
+       
       });
     });
   });
 
   describe('Adding', function () {
     describe('7 . 8 9 + 1 + 2 =', function(){
+    it('should be 10.89', function () {
       press('7');
       press('.');
       press('8');
@@ -49,11 +49,12 @@
       press('+');
       press('2');
       press('=');
-      it('should be 10.89', function () {
-        assert.equal(displayOuput(), "10.89");
+        assert.equal(displayOutput(), "10.89");
       });
     });
     describe('7 . 8 9 + 1 . 0 0 + 2 =', function(){
+    it('should be 10.89', function () {
+    
       press('7');
       press('.');
       press('8');
@@ -66,27 +67,28 @@
       press('+');
       press('2');
       press('=');
-      it('should be 10.89', function () {
-        assert.equal(displayOuput(), "10.89");
+        assert.equal(displayOutput(), "10.89");
       });
     });
     describe('1 + 1 =', function(){
-    	press('1');
+    
+      it('should be 2', function () {
+      		press('1');
     	press('+');
     	press('1');
     	press('=');
-      it('should be 2', function () {
         assert.equal(displayOutput(), "2");
       });
     });
-    describe('. 9 + . 1 =', function(){
-    	press('.');
-    	press('9');
+    describe('. 1 + . 2 =', function(){
+    
+      it('should be 1', function () {
+      	press('.');
+    	press('1');
     	press('+');
     	press('.');
-    	press('1');
+    	press('2');
     	press('=');
-      it('should be 1', function () {
         assert.equal(displayOutput(), "1");
       });
     });

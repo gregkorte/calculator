@@ -7,7 +7,7 @@ $(function(){
 	var $display = $("input.displayoutput");
 	var prior = 0;
 	$numButton.on('click', function(){
-		$('#displayoutput').val($(this).val());
+		$('#displayoutput').val($(this).val()).after(prior);
 		//append the numbers
 	});
 	$rightBut.on('click', function(){
@@ -16,7 +16,6 @@ $(function(){
 		} else {
 			prior += +$('#displayoutput').val();
 		  $('#displayoutput').val(prior);
-		  prior = 0;
 			//run the equals operator
 		}
 	});
