@@ -1,42 +1,41 @@
-$(function(){
+$(function() {
 	var $numButton = $("input.number");
 	var $opButton = $("input.operator");
 	var inputOp = $opButton.val();
 	var $rightBut = $("input.rightbut");
 	var inputRight = $rightBut.val();
 	var $display = $("input.displayoutput");
-	var prior = 0;
-	$numButton.on('click', function(){
-		$('#displayoutput').val($(this).val()).after(prior);
+	$numButton.on('click', function() {
+		$('#displayoutput').val($(this).val()).after(previousResult);
 		//append the numbers
 	});
-	$rightBut.on('click', function(){
-		if($(this).val() === 'clear'){
+	$rightBut.on('click', function() {
+		if ($(this).val() === 'clear') {
 			//clear the display bar
 		} else {
-			prior += +$('#displayoutput').val();
-		  $('#displayoutput').val(prior);
+			$('#displayoutput').val(previousResult);
 			//run the equals operator
 		}
 	});
-	$opButton.on('click', function(){
+	$opButton.on('click', function() {
 		$('#displayoutput').val($(this).val());
 		//run the function 'press'
-		
-	
+
+	});
 });
-function displayOutput(){
+function displayOutput() {
 	return $('#displayoutput').val();
 }
 
 var previousResult;
 var nextOperation;
 
+
 function add(a, b){
 	if(!a){
 		a = 1;
 	}
-	return ((a * 100000000000000) + (b * 100000000000000))/100000000000000
+	return ((a * 100000000000000) + (b * 100000000000000))/100000000000000;
 }
 
 function subtract(a, b){
@@ -55,17 +54,22 @@ function divide(a, b){
 	}
 }
 
-function currentValue(string){
+function multiply(a, b) {
+	return a * b;
+}
+
+function currentValue(string) {
 	return $('#displayoutput').val() * 1;
 }
 
-function calculate(){
-	if(!!nextOperation){
+function calculate() {
+	if(!! nextOperation){
 	previousResult = nextOperation(previousResult, currentValue());
 	} else {
 		previousResult = currentValue();
 	}
 }
+
 
 function press(buttonValue){
 	switch (buttonValue) {
@@ -114,4 +118,5 @@ function press(buttonValue){
 			$('#displayoutput').val(current + buttonValue);
 	}
 }
+
 
