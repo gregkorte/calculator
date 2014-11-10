@@ -7,17 +7,13 @@ $(function() {
 	var $display = $("input.displayoutput");
 	$numButton.on('click', function() {
 		press($(this).val());
-		//append the numbers
 	});
 	$rightBut.on('click', function() {
-		$('#displayoutput').val(previousResult);
+		press($(this).val());
 		}
 	);
 	$opButton.on('click', function() {
 		press($(this).val());
-		// $('#displayoutput').val($(this).val());
-		//run the function 'press'
-
 	});
 });
 
@@ -25,6 +21,7 @@ function displayOutput(){
 	return $('#displayoutput').val();
 }
 
+var stickyNumber = $('#displayoutput').val();
 var previousResult;
 var nextOperation;
 
@@ -91,7 +88,9 @@ function press(buttonValue){
 		break;
 
 		case 'C':
-			return $('#displayoutput').val(0);
+			nextOperation = undefined;
+			previousResult = undefined;
+			return $('#displayoutput').val('');
 		break;
 
 		case '=':
