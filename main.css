@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'digital';
+	src: url('fonts/digital.ttf');
+}
+
 .container {
 	border-style: solid;
 	border-color: black;
@@ -76,6 +81,7 @@
 	text-align: right;
 	font-size: 24pt;
 	width: 98%;
-	font-family: ‘Lucida Console’, Monaco, monospace;
+	font-family: digital;
+/*	font-family: ‘Lucida Console’, Monaco, monospace;*/
 	outline: none;
 }
