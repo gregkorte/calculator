@@ -22,16 +22,16 @@ function type(){
 				assert.equal(displayOutput(), 1.23);
 				$('#displayoutput').val(2.34);
 				assert.equal(displayOutput(), 2.34);
-			})
-		})
+			});
+		});
 
 		describe('type', function(){
 			it('should display the number typeed', function(){
 				assert.equal(displayOutput(), '');
 				type(1);
 				assert.equal(displayOutput(), 1);
-			})
-		})
+			});
+		});
 
 		describe('Entering the decimal number 7 . 8 9', function(){
 			it('should display 7.89', function(){
@@ -44,21 +44,21 @@ function type(){
 	describe('Dividing', function(){
 		describe('4 / 2 =', function(){
 			it('should be 2', function(){
-				type(4, '/', 2, '=')
+				type(4, '/', 2, '=');
 				assert.equal(displayOutput(), '2');
 			});
 		});
 
 		describe('1 / . 2 =', function(){
 			it('should be 5', function(){
-				type(1, '/', '.', 2, '=')
+				type(1, '/', '.', 2, '=');
 				assert.equal(displayOutput(), '5');
 			});
 		});
 
 		describe('. 1 2 5 / . 5 =', function(){
 			it('should be .25', function(){
-				type('.', 1, 2, 5, '/', '.', 5, '=')
+				type('.', 1, 2, 5, '/', '.', 5, '=');
 				assert.equal(displayOutput(), '0.25');
 			});
 		});
@@ -72,21 +72,21 @@ function type(){
 
 		describe('3 . 1 4 / 0 =', function(){
 			it('should be undefined', function(){
-				type(3, '.', 1, 4, '/', 0, '=')
+				type(3, '.', 1, 4, '/', 0, '=');
 				assert.equal(displayOutput(), 'undefined');
 			});
 		});
 
 		describe('12 / 2 /  2 =', function(){
 			it('should be 3', function(){
-				type(1, 2, '/', 2, '/', 2, '=')
+				type(1, 2, '/', 2, '/', 2, '=');
 				assert.equal(displayOutput(), '3');
 			});
 		});
 
 		describe('3 * 4 / 2 =', function(){
 			it('should be 6', function(){
-				type(3, '*', 4, '/', 2, '=')
+				type(3, '*', 4, '/', 2, '=');
 				assert.equal(displayOutput(), '6');
 			});
 		});
@@ -169,21 +169,21 @@ function type(){
 	describe('Multiplying', function(){
 		describe('2 * 3 =', function(){
 			it('should be 6', function(){
-				type(2, '*', 3, '=')
+				type(2, '*', 3, '=');
 				assert.equal(displayOutput(), '6');
 			});
 		});
 
 		describe('1 * . 2 = .2', function(){
 			it('should be .2', function(){
-				type(1, '*', '.', 2, '=')
+				type(1, '*', '.', 2, '=');
 				assert.equal(displayOutput(), '0.2');
 			});
 		});
 
 		describe('. 1 2 5 * . 5 =', function(){
 			it('should be .0625', function(){
-				type('.', 1, 2, 5, '*', '.', 5, '=')
+				type('.', 1, 2, 5, '*', '.', 5, '=');
 				assert.equal(displayOutput(), '0.0625');
 			});
 		});
@@ -197,35 +197,35 @@ function type(){
 
 		describe('3 . 1 4 * 0 =', function(){
 			it('should be .0', function(){
-				type(3, '.', 1, 4, '*', 0, '=')
+				type(3, '.', 1, 4, '*', 0, '=');
 				assert.equal(displayOutput(), '0');
 			});
 		});
 
 		describe('3 . 1 4 * . 0 =', function(){
 			it('should be 0', function(){
-				type(3, '.', 1, 4, '*', '.', 0, '=')
+				type(3, '.', 1, 4, '*', '.', 0, '=');
 				assert.equal(displayOutput(), '0');
 			});
 		});
 
 		describe('3 * 4 * 2 =', function(){
 			it('should be 24', function(){
-				type(3, '*', 4, '*', 2, '=')
+				type(3, '*', 4, '*', 2, '=');
 				assert.equal(displayOutput(), '24');
 			});
 		});
 
 		describe('3 * 4 + 2 =', function(){
 			it('should be 14', function(){
-				type(3, '*', 4, '+', 2, '=')
+				type(3, '*', 4, '+', 2, '=');
 				assert.equal(displayOutput(), '14');
 			});
 		});
 
 		describe('3 * 0 * 2 =', function(){
 			it('should be 0', function(){
-				type(3, '*', 0, '*', 2, '=')
+				type(3, '*', 0, '*', 2, '=');
 				assert.equal(displayOutput(), '0');
 			});
 		});
@@ -234,7 +234,7 @@ function type(){
 	describe('Clear', function(){
 		describe('C =', function(){
 			it('should be 0', function(){
-				type(3, '*', 2, '=', 'C')
+				type(3, '*', 2, '=', 'C');
 				assert.equal(displayOutput(), '0');
 			});
 		});
