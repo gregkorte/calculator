@@ -30,27 +30,26 @@ function displayOutput() {
 var previousResult;
 var nextOperation;
 
-
-function add(a, b){
-	if(!a){
+function add(a, b) {
+	if (!a) {
 		a = 1;
 	}
-	return ((a * 100000000000000) + (b * 100000000000000))/100000000000000;
+	return ((a * 100000000000000) + (b * 100000000000000)) / 100000000000000;
 }
 
-function subtract(a, b){
+function subtract(a, b) {
 	return a - b;
 }
 
-function multiply(a, b){
+function multiply(a, b) {
 	return a * b;
 }
 
-function divide(a, b){
-	if(b === 0){
+function divide(a, b) {
+	if (b === 0) {
 		return 'undefined';
 	} else {
-			return a / b;
+		return a / b;
 	}
 }
 
@@ -63,60 +62,58 @@ function currentValue(string) {
 }
 
 function calculate() {
-	if(!! nextOperation){
-	previousResult = nextOperation(previousResult, currentValue());
+	if (!!nextOperation) {
+		previousResult = nextOperation(previousResult, currentValue());
 	} else {
 		previousResult = currentValue();
 	}
 }
 
-
-function press(buttonValue){
+function press(buttonValue) {
 	switch (buttonValue) {
 
-		case '+':
-			calculate();
-			nextOperation = add;
-			$('#displayoutput').val('');
-		break;
-
-		case '-':
+	case '+':
 		calculate();
-			nextOperation = subtract;
-			$('#displayoutput').val('');
+		nextOperation = add;
+		$('#displayoutput').val('');
 		break;
 
-		case '*':
-			calculate();
-			nextOperation = multiply;
-			$('#displayoutput').val('');
-		break;
-
-		case '/':
+	case '-':
 		calculate();
-			nextOperation = divide;
-			$('#displayoutput').val('');
+		nextOperation = subtract;
+		$('#displayoutput').val('');
 		break;
 
-		case 'C':
-			return $('#displayoutput').val(0);
+	case '*':
+		calculate();
+		nextOperation = multiply;
+		$('#displayoutput').val('');
 		break;
 
-		case '=':
-			calculate();
-			$('#displayoutput').val(previousResult);
-			previousResult = 0;
+	case '/':
+		calculate();
+		nextOperation = divide;
+		$('#displayoutput').val('');
 		break;
 
-		case '+/-':
-			// previousResult += +$('#displayoutput').val();
-			// $('#displayoutput').val('');
+	case 'C':
+		return $('#displayoutput').val(0);
 		break;
 
-		default:
-			var current = $('#displayoutput').val();
-			$('#displayoutput').val(current + buttonValue);
+	case '=':
+		calculate();
+		$('#displayoutput').val(previousResult);
+		previousResult = 0;
+		break;
+
+	case '+/-':
+		// previousResult += +$('#displayoutput').val();
+		// $('#displayoutput').val('');
+		break;
+
+	default:
+		var current = $('#displayoutput').val();
+		$('#displayoutput').val(current + buttonValue);
 	}
 }
-
 
