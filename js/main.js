@@ -6,19 +6,16 @@ $(function() {
 	var inputRight = $rightBut.val();
 	var $display = $("input.displayoutput");
 	$numButton.on('click', function() {
-		$('#displayoutput').val($(this).val()).after(previousResult);
+		press($(this).val());
 		//append the numbers
 	});
 	$rightBut.on('click', function() {
-		if ($(this).val() === 'clear') {
-			//clear the display bar
-		} else {
-			$('#displayoutput').val(previousResult);
-			//run the equals operator
+		$('#displayoutput').val(previousResult);
 		}
-	});
+	);
 	$opButton.on('click', function() {
-		$('#displayoutput').val($(this).val());
+		press($(this).val());
+		// $('#displayoutput').val($(this).val());
 		//run the function 'press'
 
 	});
@@ -35,7 +32,7 @@ function add(a, b){
 	if(!a){
 		a = 1;
 	}
-	return ((a * 100000000000000) + (b * 100000000000000))/100000000000000
+	return ((a * 100000000000000) + (b * 100000000000000))/100000000000000;
 }
 
 function subtract(a, b){
