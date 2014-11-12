@@ -102,7 +102,68 @@
 	});
 
 	describe('adding decimals', function() {
+		describe('0 1 1 + 1 =', function(){
+			it('should be 12', function(){
+				var a = new Decimal("011");
+				var b = new Decimal("1");
+				var result = a.plus(b);
+				assert.equal(result.toString(), '12');
+			});
+		});
+		describe('7 . 8 9 + 1 + 2 =', function() {
+			it('should be 10.89', function() {
+				var a = new Decimal("7.89");
+				var b = new Decimal("1");
+				var c = new Decimal("2");
+				var result = a.plus(b).plus(c);
+				assert.equal(result.toString(), '10.89');
+			});
+		});
 
+		describe('7 . 8 9 + 1 . 0 0 + 2 =', function() {
+			it('should be 10.89', function() {
+				var a = new Decimal("7.89");
+				var b = new Decimal("1.00");
+				var c = new Decimal("2");
+				var result = a.plus(b).plus(c);
+				assert.equal(result.toString(), '10.89');
+			});
+		});
+
+		describe('1 + 1 =', function() {
+			it('should be 2', function() {
+				var a = new Decimal("1");
+				var b = new Decimal("1");
+				var result = a.plus(b);
+				assert.equal(result.toString(), '2');
+			});
+		});
+
+		describe('. 1 + . 2 =', function() {
+			it('should be 0.3', function() {
+				var a = new Decimal(".1");
+				var b = new Decimal(".2");
+				var result = a.plus(b);
+				assert.equal(result.toString(), '0.3');
+			});
+		});
+
+		describe('. 1 1 1 1 1 1 1 1 + . 2 2 2 2 2 2 2 2 =', function() {
+			it('should be 0.3', function() {
+				var a = new Decimal(".11111111");
+				var b = new Decimal(".22222222");
+				var result = a.plus(b);
+				assert.equal(result.toString(), '0.33333333');
+			});
+		});
+		describe('1 + 0 =', function() {
+			it('should be 1', function() {
+				var a = new Decimal("1");
+				var b = new Decimal("0");
+				var result = a.plus(b);
+				assert.equal(result.toString(), '1');
+			});
+		});
 	});
 	describe('subtracting decimals', function() {
 
@@ -115,5 +176,31 @@
 	});
 	describe('signed decimals', function() {
 
+	});
+	describe('mantissa', function(){
+		describe('1', function(){
+			it('should be 0', function(){
+				var decimal = new Decimal('1');
+				assert.equal(decimal.mantissa, 0);
+			});
+		});
+		describe('1.0', function(){
+			it('should have 1', function(){
+				var decimal = new Decimal('1.0');
+				assert.equal(decimal.mantissa, 1);
+			});
+		});
+		describe('0.22222222', function(){
+			it('should be 8', function(){
+				var decimal = new Decimal('0.22222222');
+				assert.equal(decimal.mantissa, 8);
+			});
+		});
+		describe('.678', function(){
+			it('should be 3', function(){
+				var decimal = new Decimal(.678);
+				assert.equal(decimal.mantissa, 3);
+			});
+		});
 	});
 })();
