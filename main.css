@@ -111,11 +111,15 @@ input[type=button].power:active {
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
+	transition: background 2s, transform 2s;
+	-webkit-transform: background 2s transform 2s;
 }
 
 #displayoutput.on {
 	background: #BBBCC4;
 	color: #000;
+	transition: background 2s, transform 2s;
+	-webkit-transform: background 2s transform 2s;
 	}
 
 .hidden {
