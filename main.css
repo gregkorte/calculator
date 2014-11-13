@@ -12,7 +12,7 @@ body {
 	border: 1px solid #c7c7c7;
 	width: 320px;
 	margin: 0 auto;
-	margin-top: 5%;
+	margin-top: 15%;
 	text-align: center;
 	border-radius: 10px;
 	box-shadow: 3px 3px 8px #001;
@@ -71,6 +71,11 @@ input[type=button].power:active {
 	box-shadow: 1px 1px 2px #001;
 }
 
+.powerButton {
+	text-align: right;
+	margin: 0 26px;
+}
+
 .top {
 	margin: 0 20px;
 }
@@ -95,14 +100,23 @@ input[type=button].power:active {
 	margin: 2%;
 	font-family: digital;
 	outline: none;
-	background: #BBBCC4;
+	background: #595047;
+	color: #595047;
 	border-radius: 10px;
 	margin-top: 10%;
 	padding: 2%;
 	-moz-box-shadow: inset 0 0 10px #000;
 	-webkit-box-shadow: inset 0 0 10px #000;
 	box-shadow: inset 0 0 10px #000;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
 }
+
+#displayoutput.on {
+	background: #BBBCC4;
+	color: #000;
+	}
 
 .hidden {
 	display: none;
@@ -114,4 +128,9 @@ input[type=button].power:active {
 	text-align: center;
 	top: 70px;
 	margin-bottom: 70px;
+}
+
+.imageZero {
+	width: 450px;
+	height: 458px;
 }

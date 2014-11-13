@@ -89,6 +89,13 @@ function press(buttonValue) {
 			return $('#displayoutput').val(current * -1);
 			break;
 
+		case 'on/off':
+			$('#displayoutput').toggleClass('on');
+			nextOperation = undefined;
+			previousResult = undefined;
+			return $('#displayoutput').val('');
+			break;
+
 		default:
 			var current = $('#displayoutput').val();
 			$('#displayoutput').val(current + buttonValue);
