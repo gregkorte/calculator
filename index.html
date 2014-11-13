@@ -7,89 +7,57 @@
 	<body>
 		<div class="container">
 			<div class="display">
-				<input id="displayoutput" type="text" readonly="">
+				<input id="displayoutput" type="text" readonly="readonly">
 			</div>
-			<div class="buttons">
-				<div class="top">
-					<ul>
-						<li>
-							<input class="operator" type="button" value="+">
-						</li>
-						<li>
-							<input class="operator" type="button" value="-">
-						</li>
-						<li>
-							<input class="operator" type="button" value="*">
-						</li>
-						<li>
-							<input class="operator" type="button" value="/">
-						</li>
-					</ul>
-				</div>
-				<div class="right">
-					<ul>
-						<li>
-							<input class="rightbut" type="button" value="clear">
-						</li>
-						<li>
-							<input class="rightbut" id="equal" type="button" value="=">
-						</li>
-					</ul>
-				</div>
+			<div id="buttons">
 				<div class="keypad">
-					<ul>
+					<div class="powerButton">
 						<span>
-							<li>
-								<input class="number" type="button" value="1">
-							</li>
-							<li>
-								<input class="number" type="button" value="2">
-							</li>
-							<li>
-								<input class="number" type="button" value="3">
-							</li> </span>
-					</ul>
-					<ul>
+							<input type="button" class="power" value="on/off">
+						</span>
+					</div>
+					<div class="top">
 						<span>
-							<li>
-								<input class="number" type="button" value="4">
-							</li>
-							<li>
-								<input class="number" type="button" value="5">
-							</li>
-							<li>
-								<input class="number" type="button" value="6">
-							</li> </span>
-					</ul>
-					<ul>
+							<input type="button" value="1">
+							<input type="button" value="2">
+							<input type="button" value="3">
+							<input type="button" value="+">
+							<input type="button" value="+/-">
+						</span>
 						<span>
-							<li>
-								<input class="number" type="button" value="7">
-							</li>
-							<li>
-								<input class="number" type="button" value="8">
-							</li>
-							<li>
-								<input class="number" type="button" value="9">
-							</li> </span>
-					</ul>
-					<ul>
+							<input type="button" value="4">
+							<input type="button" value="5">
+							<input type="button" value="6">
+							<input type="button" value="-">
+							<input type="button" value="C">
+						</span>
+					</div>
+					<div class="bottom">
 						<span>
-							<li>
-								<input class="number" type="button" value="0">
-							</li>
-							<li>
-								<input class="number" type="button" value=".">
-							</li> </span>
-					</ul>
+							<input type="button" value="7">
+							<input type="button" value="8">
+							<input type="button" value="9">
+							<input type="button" value="*">
+						</span>
+						<span>
+							<input type="button" class="zero" value="0">
+							<input type="button" value=".">
+							<input type="button" value="/">
+						</span>
+					</div>
+					<div class="right">
+						<span>
+							<input type="button" class="equals" value="=">
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="divide0 hidden">
 			<img src="images/divide_by_zero.jpg">
 		</div>
-		<script src="bower_components/bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="js/main.js"></script>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="js/decimal.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>
