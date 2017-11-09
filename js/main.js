@@ -1,3 +1,7 @@
+var previousResult;
+var nextOperation;
+var current = $('#displayoutput').val();
+
 $(function() {
 	var $keyPad = $('input[type=button]');
 
@@ -9,9 +13,6 @@ $(function() {
 function displayOutput() {
 	return $('#displayoutput').val();
 }
-
-var previousResult;
-var nextOperation;
 
 function add(a, b) {
 	return a + b;

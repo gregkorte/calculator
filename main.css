@@ -28,7 +28,7 @@ body {
 
 input[type=button] {
 	border: none;
-	border-radius: 2px;
+	border-radius: 6px;
 	font-size: 18pt;
 	color: #FFFFFF;
 	background-color: #474A59;
@@ -45,7 +45,7 @@ input[type=button]:active {
 }
 
 input.zero {
-	width: 94px;
+	width: 95px;
 }
 
 input.equals {
