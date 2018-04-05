@@ -125,16 +125,3 @@ input[type=button].power:active {
 .hidden {
 	display: none;
 }
-
-.divide0 {
-	position: absolute;
-	width: 100%;
-	text-align: center;
-	top: 70px;
-	margin-bottom: 70px;
-}
-
-.imageZero {
-	width: 450px;
-	height: 458px;
-}
