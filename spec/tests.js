@@ -71,9 +71,9 @@ function type(){
 		});
 
 		describe('3 . 1 4 / 0 =', function(){
-			it('should be undefined', function(){
+			it('should be ERROR', function(){
 				type(3, '.', 1, 4, '/', 0, '=');
-				assert.equal(displayOutput(), 'undefined');
+				assert.equal(displayOutput(), 'ERROR');
 			});
 		});
 
@@ -233,9 +233,9 @@ function type(){
 
 	describe('Clear', function(){
 		describe('C =', function(){
-			it('should be 0', function(){
+			it('should be empty string', function(){
 				type(3, '*', 2, '=', 'C');
-				assert.equal(displayOutput(), '0');
+				assert.equal(displayOutput(), '');
 			});
 		});
 	});

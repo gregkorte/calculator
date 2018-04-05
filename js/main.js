@@ -1,40 +1,44 @@
-'use strict';
-
-let previousResult;
-let nextOperation;
-let current = $('#displayoutput').val();
+var previousResult;
+var nextOperation;
+var current = $('#displayoutput').val();
 
 $(function() {
-	let $keyPad = $('input[type=button]');
+	var $keyPad = $('input[type=button]');
 
 	$keyPad.on('click', function() {
 		press($(this).val());
 	});
 });
 
-let displayOutput() {
+function displayOutput() {
 	return $('#displayoutput').val();
 }
 
-let add = (a, b) => a + b;
+function add(a, b) {
+	return a + b;
+}
 
-let subtract = (a, b) => a - b;
+function subtract(a, b) {
+	return a - b;
+}
 
-let multiply = (a, b) => = a * b;
+function multiply(a, b) {
+	return a * b;
+}
 
-let divide = (a, b) => {
+function divide(a, b) {
 	if (b === 0) {
-		return "ERROR";
+		return 'ERROR';
 	} else {
 		return a / b;
 	}
 }
 
-let currentValue(string) {
+function currentValue(string) {
 	return $('#displayoutput').val() * 1;
 }
 
-let calculate() {
+function calculate() {
 	if (!!nextOperation) {
 		previousResult = nextOperation(previousResult, currentValue());
 	} else {
@@ -42,7 +46,7 @@ let calculate() {
 	}
 }
 
-let press(buttonValue) {
+function press(buttonValue) {
 	switch (buttonValue) {
 
 		case '+':
@@ -82,7 +86,7 @@ let press(buttonValue) {
 			break;
 
 		case '+/-':
-			let current = $('#displayoutput').val();
+			var current = $('#displayoutput').val();
 			return $('#displayoutput').val(current * -1);
 			break;
 
@@ -94,7 +98,7 @@ let press(buttonValue) {
 			break;
 
 		default:
-			let current = $('#displayoutput').val();
+			var current = $('#displayoutput').val();
 			$('#displayoutput').val(current + buttonValue);
 	}
 }
